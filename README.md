@@ -1,1 +1,0 @@
-# klyptiq-assets
