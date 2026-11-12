@@ -54,3 +54,7 @@ footer a{color:var(--mu)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
 .legal main{max-width:760px;margin:0 auto;padding:36px 20px 60px}.legal h1{font-size:2rem;color:var(--fg);animation:none}.legal h2{margin-top:26px}
 .topbar{padding:14px 0;border-bottom:1px solid var(--line);background:var(--card)}.topbar a{font-weight:800;text-decoration:none;color:var(--p1)}
+
+.brand{display:inline-block;margin-bottom:22px;animation:rise .7s both}.brand img{display:block;height:auto;max-width:200px}
+.chip{display:inline-block;background:#0b1830;border-radius:14px;padding:10px 16px;margin-bottom:14px}.chip img{display:block;height:auto;max-width:160px}
+.topbar .chip{margin:0;padding:6px 14px}.topbar .chip img{max-width:150px}
