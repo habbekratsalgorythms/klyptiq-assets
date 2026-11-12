@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bestellen | SpotlessPro Contentdienst</title><meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="bestel.css"></head><body>
+<main class="order">
+<div class="top"><a href="index.html" aria-label="HabbekratsAlgorythms"><span class="chip"><img src="logo.svg" alt="HabbekratsAlgorythms" width="150" height="45"></span></a><a class="back" href="index.html">&larr; Terug naar de diensten</a></div>
+<div class="orderhero"><span class="badge">ALLEEN VOOR ONDERNEMERS</span><h1 id="ptitle">Je bestelling</h1><div class="p" id="pprice"></div><div id="pnote" style="opacity:.92"></div></div>
+<div class="progress" id="prog" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+<form class="panel" id="f" novalidate autocomplete="on">
+<div class="hp" aria-hidden="true"><label>Website <input type="text" name="website2" tabindex="-1" autocomplete="off"></label></div>
+<section data-step="1"><h2>Je bedrijf</h2><p class="hint">Voor je factuur en om je bestelling te kunnen leveren.</p>
+<div class="field"><label for="bedrijfsnaam">Bedrijfsnaam</label><input type="text" id="bedrijfsnaam" name="bedrijfsnaam" required maxlength="100"><div class="err"></div></div>
+<div class="row"><div class="field"><label for="kvk">KvK-nummer</label><input type="text" id="kvk" name="kvk" required maxlength="20" inputmode="numeric"><div class="err"></div></div>
+<div class="field"><label for="btw">Btw-nummer <small>(optioneel)</small></label><input type="text" id="btw" name="btw" maxlength="30"></div></div>
+<div class="field"><label for="straat">Factuuradres: straat en huisnummer</label><input type="text" id="straat" name="straat" required maxlength="100" autocomplete="address-line1"><div class="err"></div></div>
+<div class="row"><div class="field"><label for="postcode">Postcode</label><input type="text" id="postcode" name="postcode" required maxlength="12" autocomplete="postal-code"><div class="err"></div></div>
+<div class="field"><label for="plaats">Plaats</label><input type="text" id="plaats" name="plaats" required maxlength="60" autocomplete="address-level2"><div class="err"></div></div></div>
+<div class="row"><div class="field"><label for="contact">Contactpersoon</label><input type="text" id="contact" name="contact" required maxlength="80" autocomplete="name"><div class="err"></div></div>
+<div class="field"><label for="email">E-mailadres <small>(ook voor je factuur)</small></label><input type="email" id="email" name="email" required maxlength="120" autocomplete="email"><div class="err"></div></div></div>
+</section>
+<section data-step="2" hidden><h2>Over je bedrijf</h2><p class="hint">Korte antwoorden zijn genoeg. Vul geen persoonsgegevens van klanten of personeel in.</p>
+<div class="field"><label for="wat">Wat doet je bedrijf? <small>(1 tot 2 zinnen)</small></label><textarea id="wat" name="wat" required maxlength="400"></textarea><div class="err"></div></div>
+<div class="field"><label for="werkgebied">Plaats of werkgebied</label><input type="text" id="werkgebied" name="werkgebied" required maxlength="100"><div class="err"></div></div>
+<div class="field"><label for="diensten">Top 3 diensten of producten</label><textarea id="diensten" name="diensten" required maxlength="400"></textarea><div class="err"></div></div>
+<div class="row"><div class="field"><label for="toon">Toon</label><select id="toon" name="toon"><option>Zakelijk</option><option>Informeel</option></select></div>
+<div class="field"><label for="aanspreek">Aanspreekvorm</label><select id="aanspreek" name="aanspreek"><option>u/uw</option><option>je/jij</option></select></div></div>
+<div class="field"><label for="extra" id="extralabel">Extra</label><textarea id="extra" name="extra" required maxlength="400"></textarea><div class="err"></div></div>
+<p class="hint">Logo's en foto's kun je na je bestelling als antwoord op onze mail meesturen (alleen met rechten en toestemmingen).</p>
+</section>
+<section data-step="3" hidden><h2>Bevestigen</h2><p class="hint">Nog één stap. Daarna kun je meteen betalen met iDEAL.</p>
+<div class="summary" id="summary"></div>
+<label class="chk" for="akkoord"><input type="checkbox" id="akkoord" name="akkoord"><span>Ik bestel namens een onderneming en ga akkoord met de <a href="voorwaarden.html" target="_blank" rel="noopener">algemene voorwaarden</a>. Zie ook de <a href="privacy.html" target="_blank" rel="noopener">privacyverklaring</a>.</span></label><div class="err" id="akerr"></div>
+</section>
+<div class="nav"><button type="button" class="btn sec" id="prev" hidden>Vorige</button><button type="button" class="btn" id="next">Volgende</button></div>
+<div class="err" id="senderr" role="alert"></div>
+</form>
+<div class="panel done" id="done" hidden><div class="tick">&#10003;</div><h2>Bedankt voor je bestelling!</h2>
+<p>Betaal nu veilig met iDEAL. Daarna leveren wij binnen vijf werkdagen. Je hebt ook een mail met dezelfde betaallink gekregen.</p>
+<p><a class="btn" id="paylink" href="#">Betaal met iDEAL</a></p><p class="hint">Geen mail ontvangen? Kijk in je spam of mail naar habbekratsalgorythms@gmail.com.</p></div>
+</main>
+<script>
+(function(){
+var WEBAPP='WEBAPP_URL';
+var P={content:{t:'Contentpakket',p:'€79',n:'incl. 21% btw. 10 posts met planning, twee correctierondes.',link:'https://payment-links.mollie.com/payment/tSyVpTpDtBwsyTrXQ4zYT',lab:'Op welke platforms wil je posten? (Instagram, TikTok, LinkedIn)'},
+website:{t:'Je eigen bedrijfswebsite',p:'€195',n:'incl. 21% btw. One-page website, drie correctierondes.',link:'https://payment-links.mollie.com/payment/q7rpyHGYd2QXqZohXKobH',lab:'Welke openbare contactgegevens mogen op de site? (telefoon, e-mail, adres, openingstijden; zeg per gegeven ja of nee)'}};
+var q=new URLSearchParams(location.search).get('pakket');var key=P[q]?q:'content';var pk=P[key];
+document.getElementById('ptitle').textContent=pk.t;document.getElementById('pprice').textContent=pk.p;document.getElementById('pnote').textContent=pk.n;document.getElementById('extralabel').textContent=pk.lab;document.getElementById('paylink').href=pk.link;
+var f=document.getElementById('f'),steps=[].slice.call(f.querySelectorAll('section')),bars=document.querySelectorAll('#prog i'),next=document.getElementById('next'),prev=document.getElementById('prev'),cur=0,sending=false;
+function show(){steps.forEach(function(s,i){s.hidden=i!==cur});bars.forEach(function(b,i){b.className=i<=cur?'on':''});prev.hidden=cur===0;next.textContent=cur===2?'Bestelling plaatsen':'Volgende';if(cur===2)summary();window.scrollTo({top:0,behavior:'smooth'})}
+function val(){var ok=true;[].forEach.call(steps[cur].querySelectorAll('[required]'),function(el){var e=el.parentNode.querySelector('.err');var v=el.value.trim();var bad=!v||(el.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v));if(e)e.textContent=bad?'Vul dit veld in.':'';if(bad)ok=false});if(!ok){var first=steps[cur].querySelector('.err:not(:empty)');if(first)first.parentNode.querySelector('input,textarea').focus()}return ok}
+function summary(){var g=function(n){return f.elements[n].value.trim()};document.getElementById('summary').innerHTML='<strong>'+pk.t+'</strong> · '+pk.p+' incl. btw<br>'+esc(g('bedrijfsnaam'))+' · KvK '+esc(g('kvk'))+'<br>'+esc(g('email'))}
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+prev.onclick=function(){if(cur>0){cur--;show()}};
+next.onclick=function(){if(sending)return;if(!val())return;if(cur<2){cur++;show();return}
+if(!f.elements.akkoord.checked){document.getElementById('akerr').textContent='Ga akkoord met de voorwaarden om te bestellen.';return}document.getElementById('akerr').textContent='';send()};
+function send(){sending=true;next.textContent='Bezig...';next.disabled=true;document.getElementById('senderr').textContent='';var d={pakket:key,akkoord:true,website2:f.elements.website2.value};['bedrijfsnaam','kvk','btw','straat','postcode','plaats','contact','email','wat','werkgebied','diensten','toon','aanspreek','extra'].forEach(function(n){d[n]=f.elements[n].value});
+if(WEBAPP==='WEBAPP_URL'){fail('De bestelpagina is nog niet gekoppeld.');return}
+fetch(WEBAPP,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)}).then(function(r){return r.json()}).then(function(j){if(j&&j.ok){f.hidden=true;document.getElementById('prog').hidden=true;document.getElementById('done').hidden=false;window.scrollTo({top:0,behavior:'smooth'})}else fail(j&&j.error==='limiet'?'Er zijn te veel bestellingen tegelijk. Probeer het later opnieuw.':'Er ging iets mis. Controleer je gegevens of mail ons op habbekratsalgorythms@gmail.com.')}).catch(function(){fail('Verzenden is niet gelukt. Probeer het opnieuw of mail ons op habbekratsalgorythms@gmail.com.')})}
+function fail(m){sending=false;next.disabled=false;next.textContent='Bestelling plaatsen';document.getElementById('senderr').textContent=m}
+show();})();
+</script></body></html>
